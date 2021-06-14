@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en <AddCategory /> Debe mostrar <AddCategory /> correctamente 1`] = `
+<form
+  className="form__group field"
+  onSubmit={[Function]}
+>
+  <br />
+  <p />
+  <input
+    className="form__field"
+    id="name"
+    name="name"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <label
+    className="form__label"
+    htmlFor="name"
+  >
+    Type Here...
+  </label>
+</form>
+`;
