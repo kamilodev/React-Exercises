@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFetchGifts } from '../hooks/useFetchGifts'
-import { GiftGridItem } from './GiftGridItem'
+import GiftGridItem from './GiftGridItem'
 
 export const GiftGrid = ({ category }) => {
 	const { data: images, loading } = useFetchGifts(category)
