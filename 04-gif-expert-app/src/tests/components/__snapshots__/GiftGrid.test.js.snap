@@ -1,28 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for GiftGrid component should change the snapshot when useFetchGifs is executed 1`] = `
-<Fragment>
-  <h3
-    className=" animate__animated animate__fadeIn"
-  >
-     
-    Goku
-     
-  </h3>
-  <br />
-  <div
-    className="card-grid"
-  >
-    <GiftGridItem
-      id="ABC"
-      key="ABC"
-      title="ABC Title"
-      url="https://google.com"
-    />
-  </div>
-</Fragment>
-`;
-
 exports[`Tests for GiftGrid component should show the correct component and match with the snapshot 1`] = `
 <Fragment>
   <h3
