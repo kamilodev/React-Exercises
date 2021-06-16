@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { AddCategory } from './components/AddCategory'
-import { GiftGrid } from './components/GiftGrid'
+import React, { useState } from 'react';
+import { AddCategory } from './components/AddCategory';
+import { GiftGrid } from './components/GiftGrid';
 
-const GifExpertApp = () => {
-	const [categories, setCategories] = useState(['Coding'])
+const GifExpertApp = ({ defaultCategories = [] }) => {
+	const [categories, setCategories] = useState(defaultCategories);
+	/* const [categories, setCategories] = useState(['Coding']) */
 
 	return (
 		<>
@@ -12,11 +13,11 @@ const GifExpertApp = () => {
 			<br />
 			<AddCategory setCategories={setCategories} />
 			<br />
-			{categories.map(category => (
+			{categories.map((category) => (
 				<GiftGrid key={category} category={category} />
 			))}
 		</>
-	)
-}
+	);
+};
 
-export default GifExpertApp
+export default GifExpertApp;

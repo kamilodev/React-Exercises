@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas para el componente <GifExpertApp /> Debe hacer un snapshoot y mostrarse correctamente 1`] = `
+<Fragment>
+  <h2>
+    Gift Expert App
+  </h2>
+  <h3>
+    Input text for search
+  </h3>
+  <br />
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <br />
+</Fragment>
+`;
+
+exports[`Pruebas para el componente <GifExpertApp /> Debe mostrar una lista de categorias 1`] = `
+<Fragment>
+  <h2>
+    Gift Expert App
+  </h2>
+  <h3>
+    Input text for search
+  </h3>
+  <br />
+  <AddCategory
+    setCategories={[Function]}
+  />
+  <br />
+  <GiftGrid
+    category="Coding"
+    key="Coding"
+  />
+  <GiftGrid
+    category="Dragon Ball GT"
+    key="Dragon Ball GT"
+  />
+</Fragment>
+`;
