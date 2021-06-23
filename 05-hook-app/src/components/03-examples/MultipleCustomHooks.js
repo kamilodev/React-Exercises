@@ -4,13 +4,32 @@ import {useFetch} from "../../hooks/useFetch";
 
 export const MultipleCustomHooks = () => {
 
-	const state = useFetch('https://www.breakingbadapi.com/api/quotes/2')
-	console.log(state)
+	const {loading, data} = useFetch('https://www.breakingbadapi.com/api/quotes/2')
+
+	const {author, quote} = !!data && data[0]
 
 	return (
 		<div>
-			<h1>Custom Hooks!!</h1>
+			<h1>Breaking Bad</h1>
 			<hr />
+			{
+				loading
+				?
+					(
+						<div className='alert alert-info text-center'>
+							Loading...
+						</div>
+					)
+				:
+					(
+						<blockquote className='blockquote text-right'>
+							<p className='mb-0'> {quote} </p>
+							<br />
+							<footer className='blockquote-footer'> {author} </footer>
+						</blockquote>
+					)
+
+			}
 		</div>
 	)
 }
