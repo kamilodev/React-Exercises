@@ -22,7 +22,7 @@ import { useState } from 'react'
 // 		reset,
 // 	};
 
-export const useCounter = (initialState = 0) => {
+export const useCounter = (initialState = 10) => {
 	const [counter, setCounter] = useState(initialState)
 
 	const increment = () => {
