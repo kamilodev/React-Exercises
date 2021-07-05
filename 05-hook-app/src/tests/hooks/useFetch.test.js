@@ -18,7 +18,7 @@ describe('Pruebas en useFetch', () => {
 		const { result, waitForNextUpdate } = renderHook(() =>
 			useFetch('https://www.breakingbadapi.com/api/quotes/1'),
 		)
-		await waitForNextUpdate({ timeout: 2000 })
+		await waitForNextUpdate({ timeout: 5000 })
 		const { data, loading, error } = result.current
 		expect(loading).toBe(false)
 		expect(error).toBe(null)
