@@ -1,3 +1,8 @@
 .navbar-brand {
 	margin-left: 2rem;
 }
+
+.navbar-nav {
+	margin-inline-start: auto;
+	margin-right: 2rem;
+}
