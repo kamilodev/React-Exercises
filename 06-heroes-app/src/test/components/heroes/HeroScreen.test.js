@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeroScreen } from '../../../components/heroes/HeroScreen'
 import { mount } from 'enzyme'
-import {MemoryRouter, Route} from 'react-router-dom'
+import { MemoryRouter, Route } from 'react-router-dom'
 
 describe('Pruebas en <HeroScreen />', () => {
 	const history = {
@@ -21,11 +21,10 @@ describe('Pruebas en <HeroScreen />', () => {
 	})
 
 	test('Debe de mostrar un hero si el parametro existe y se encuentra', () => {
-
 		const wrapper = mount(
 			<MemoryRouter initialEntries={['/hero/marvel-captain']}>
 				<Route path='/hero/:heroeId' component={HeroScreen} />
-			</MemoryRouter>
+			</MemoryRouter>,
 		)
 
 		expect(wrapper.find('.row').exists()).toBe(true)
@@ -44,7 +43,7 @@ describe('Pruebas en <HeroScreen />', () => {
 					path='/hero/:heroeId'
 					component={() => <HeroScreen history={history} />}
 				/>
-			</MemoryRouter>
+			</MemoryRouter>,
 		)
 
 		wrapper.find('button').prop('onClick')()
@@ -59,7 +58,7 @@ describe('Pruebas en <HeroScreen />', () => {
 					path='/hero/:heroeId'
 					component={() => <HeroScreen history={history} />}
 				/>
-			</MemoryRouter>
+			</MemoryRouter>,
 		)
 
 		wrapper.find('button').prop('onClick')()
@@ -74,7 +73,7 @@ describe('Pruebas en <HeroScreen />', () => {
 					path='/hero/:heroeId'
 					component={() => <HeroScreen history={history} />}
 				/>
-			</MemoryRouter>
+			</MemoryRouter>,
 		)
 
 		expect(wrapper.text()).toBe('')
