@@ -49,11 +49,13 @@
 }
 
 .auth__alert-error {
-	background-color: red;
+	background-color: #fddb01;
 	border-radius: 5px;
-	color: white;
+	color: black;
 	display: flex;
 	justify-content: center;
-	margin-bottom: 10px;
-	padding: 5px;
+	margin-bottom: 15px;
+	padding: 10px;
+	text-align: center;
+	font-style: italic;
 }
