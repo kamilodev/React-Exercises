@@ -45,10 +45,7 @@ export const NoteScreen = () => {
 					onChange={handleInputChange}></textarea>
 				{note.url && (
 					<div className='notes__image'>
-						<img
-							src='http://unsplash.it/g/300?random&gravity=center'
-							alt='some kitties'
-						/>
+						<img src={note.url} alt='my selection' />
 					</div>
 				)}
 			</div>
