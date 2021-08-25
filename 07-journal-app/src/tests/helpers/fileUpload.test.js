@@ -1,4 +1,12 @@
+import cloudinary from 'cloudinary'
 import { fileUpload } from '../../helpers/fileUpload'
+
+cloudinary.config({
+	cloud_name: 'dhhb62ndg',
+	api_key: '847331653647886',
+	api_secret: 'a0B0HaF2M0YJ66m2dofWjLNTgSE',
+	secure: true,
+})
 
 describe('Test in fileUpload', () => {
 	test('Should attach a file and return URL', async () => {
@@ -11,6 +19,17 @@ describe('Test in fileUpload', () => {
 		const url = await fileUpload(file)
 
 		expect(typeof url).toBe('string')
+
+		const segments = url.split('/')
+		const imageId = segments[segments.length - 1].replace('.png', '')
+
+		await cloudinary.v2.api.delete_resources(
+			`${imageId}`,
+			{},
+			(error, result) => {
+				// console.log(error, result)
+			},
+		)
 	})
 
 	test('Should return an error', async () => {
