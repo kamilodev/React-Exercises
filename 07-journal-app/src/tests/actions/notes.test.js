@@ -19,8 +19,6 @@ describe('Test with actions in notes', () => {
 
 		const actions = store.getActions()
 
-		console.log(actions)
-
 		expect(actions[0]).toEqual({
 			type: types.notesActive,
 			payload: {
