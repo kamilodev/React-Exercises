@@ -8,9 +8,19 @@ import {
 	startLoadingNotes,
 	startNewNote,
 	startSaveNote,
+	startUploading,
 } from '../../actions/notes'
 import { db } from '../../firebase/firebase-config'
 import { types } from '../../types/types'
+import { fileUpload } from '../../helpers/fileUpload'
+
+jest.mock('../../helpers/fileUpload', () => {
+	return {
+		fileUpload: () => {
+			return Promise.resolve('https://hola-mundo.com/cosa.jpg')
+		},
+	}
+})
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
@@ -18,6 +28,14 @@ const mockStore = configureStore(middlewares)
 const initState = {
 	auth: {
 		uid: 'Testing',
+	},
+
+	notes: {
+		active: {
+			id: 'OfDtdLsuVQPFu11rO0IK',
+			title: 'Holis',
+			body: 'KavDev',
+		},
 	},
 }
 
@@ -93,5 +111,16 @@ describe('Test with actions in notes', () => {
 		const docRef = await db.doc(`/Testing/journal/notes/${note.id}`).get()
 
 		expect(docRef.data().title).toBe(note.title)
+	})
+
+	test('startUploading should update url of entry', async () => {
+		const file = []
+
+		await store.dispatch(startUploading(file))
+
+		const docRef = await db
+			.doc('/Testing/journal/notes/OfDtdLsuVQPFu11rO0IK')
+			.get()
+		expect(docRef.data().url).toBe('https://hola-mundo.com/cosa.jpg')
 	})
 })
