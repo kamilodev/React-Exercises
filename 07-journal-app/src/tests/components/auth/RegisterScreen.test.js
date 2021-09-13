@@ -56,4 +56,29 @@ describe('Test in <RegisterScreen /> component', () => {
 			payload: 'Name is required',
 		})
 	})
+
+	test('Should display div box with error', () => {
+		const initState = {
+			auth: {},
+			ui: {
+				loading: false,
+				msgError: 'Email is not valid',
+			},
+		}
+
+		let store = mockStore(initState)
+
+		const wrapper = mount(
+			<Provider store={store}>
+				<MemoryRouter>
+					<RegisterScreen />
+				</MemoryRouter>
+			</Provider>,
+		)
+
+		expect(wrapper.find('.auth__alert-error').exists()).toBe(true)
+		expect(wrapper.find('.auth__alert-error').text().trim()).toBe(
+			initState.ui.msgError,
+		)
+	})
 })
