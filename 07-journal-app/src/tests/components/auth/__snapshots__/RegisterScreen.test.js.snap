@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test in <RegisterScreen /> component Sould display <RegisterScreen /> correctly 1`] = `
+<div>
+  <h3
+    className="auth__title"
+  >
+    Register
+  </h3>
+  <form
+    className="animate__animated animate__fadeIn animate__slow"
+    onSubmit={[Function]}
+  >
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="name"
+      onChange={[Function]}
+      placeholder="Name"
+      type="text"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      type="text"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="password"
+      onChange={[Function]}
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+    <input
+      autoComplete="off"
+      className="auth__input"
+      name="password2"
+      onChange={[Function]}
+      placeholder="Confirm Password"
+      type="password"
+      value=""
+    />
+    <button
+      className="btn btn-primary btn-block mt-5 mb-1"
+      type="submit"
+    >
+      Login
+    </button>
+    <a
+      className="link"
+      href="/auth/login"
+      onClick={[Function]}
+    >
+      Already Registered?
+    </a>
+  </form>
+</div>
+`;
