@@ -6,10 +6,9 @@ describe('Pruebas en el hook useFetchGifts', () => {
 
 	test('Debe retornar el estado inicial', async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useFetchGifts('Dragon Ball GT'));
-
 		const { data, loading } = result.current;
-		await waitForNextUpdate();
 
+		await waitForNextUpdate();
 		expect(data).toEqual([]);
 		expect(loading).toBe(true);
 	});
